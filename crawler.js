@@ -3,13 +3,14 @@ const charset = require('superagent-charset');
 const cheerio = require('cheerio');
 const fs = require('fs');
 const http = require('http');
+const config = require('./my-config');
 
 charset(superagent);
 
 const UJS_MAIN_URL = 'http://my.ujs.edu.cn/';
 const CHAR_SET = 'utf-8';
-let username = '3150803016';
-let password = 'jnzx021527';
+let username = config.username;
+let password = config.password;
 let verificationCode;
 const verificationCodeReg = /^[0-9a-zA-Z]{4}$/;
 
